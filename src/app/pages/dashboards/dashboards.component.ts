@@ -40,11 +40,11 @@ export class DashboardsComponent implements OnInit {
     this.fetchData();
   }
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.openModal();
-    }, 2000);
-  }
+  // ngAfterViewInit() {
+  //   setTimeout(() => {
+  //     this.openModal();
+  //   }, 2000);
+  // }
 
   /**
    * Fetches the data

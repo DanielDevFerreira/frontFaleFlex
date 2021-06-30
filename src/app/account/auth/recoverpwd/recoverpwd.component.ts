@@ -23,7 +23,7 @@ export class RecoverpwdComponent implements OnInit {
   submitted = false;
   error: any;
   messageError: string = '';
-  btnText:string = 'Cadastrar';
+  btnText: string = 'Cadastrar';
   showSpinner = false;
 
 
@@ -31,11 +31,11 @@ export class RecoverpwdComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authFackservice: UserProfileService,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.layout_mode = LAYOUT_MODE
-    if(this.layout_mode === 'dark') {
+    if (this.layout_mode === 'dark') {
       document.body.setAttribute("data-layout-mode", "dark");
     }
     this.recoverForm = this.formBuilder.group({
@@ -61,11 +61,11 @@ export class RecoverpwdComponent implements OnInit {
           this.error = error ? error : '';
           this.messageError = error.error.message;
           this.btnText = 'Confirmar';
-            this.showSpinner = false;
-          }
-        );
+          this.showSpinner = false;
+        }
+      );
 
-      //this.router.navigate(['']);
-}
+    //this.router.navigate(['']);
+  }
 
 }

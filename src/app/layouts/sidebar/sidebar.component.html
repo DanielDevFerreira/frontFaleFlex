@@ -29,7 +29,7 @@
 
               <ul *ngIf="hasItems(item)" class="sub-menu" aria-expanded="false">
                 <li *ngFor="let subitem of item.subItems">
-                  <a [routerLink]="subitem.link" *ngIf="!hasItems(subitem)" class="side-nav-link-ref"
+                  <a style="font-size: 13px !important;" [routerLink]="subitem.link" *ngIf="!hasItems(subitem)" class="side-nav-link-ref"
                     [attr.data-parent]="subitem.parentId" routerLinkActive="active">
                     {{ subitem.label | translate}}
                   </a>

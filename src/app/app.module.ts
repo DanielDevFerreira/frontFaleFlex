@@ -18,6 +18,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { PagesModule } from './pages/pages.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 if (environment.defaultauth === 'firebase') {
   initFirebaseBackend(environment.firebaseConfig);
 } else {
@@ -29,7 +30,7 @@ export function createTranslateLoader(http: HttpClient): any {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     TranslateModule.forRoot({
