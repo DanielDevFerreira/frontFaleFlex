@@ -33,13 +33,13 @@ export class JwtInterceptor implements HttpInterceptor {
         // } else {
             // add authorization header with jwt token if available
             const currentUser = this.authfackservice.currentUserValue;
-            // if (currentUser && currentUser.token) {
-            //     request = request.clone({
-            //         setHeaders: {
-            //             Authorization: `Bearer ${currentUser.token}`,
-            //         },
-            //     });
-            // }
+            if (currentUser && currentUser.token) {
+                request = request.clone({
+                    setHeaders: {
+                        Authorization: `Bearer ${currentUser.token}`,
+                    },
+                });
+            }
         //}
         return next.handle(request);
     }

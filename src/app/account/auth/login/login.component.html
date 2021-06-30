@@ -4,10 +4,10 @@
             <div class="col-md-10">
                 <div class="text-center mb-5">
                     <a routerLink="/" class="auth-logo">
-                        <img src="assets/images/logo-dark.png" alt="" height="28" class="auth-logo-dark">
-                        <img src="assets/images/logo-light.png" alt="" height="28" class="auth-logo-light">
+                        <img src="assets/images/logo-faleflex.png" alt="" width="230" height="85" class="auth-logo-dark">
+                        <img src="assets/images/logo-faleflex.png" alt="" width="230" height="85" class="auth-logo-light">
                     </a>
-                    <p class="font-size-15 text-muted mt-3">Responsive <b>Bootstrap 5</b> Admin Dashboard</p>
+                    <p class="font-size-16 text-muted mt-3">Soluções em telefonia IP  <img src="assets/images/landline.png" alt="" height="24" class="auth-logo-light"></p>
                 </div>
                 <div class="card overflow-hidden">
                     <div class="row g-0">
@@ -15,8 +15,8 @@
                             <div class="p-lg-5 p-4">
 
                                 <div>
-                                    <h5>Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to Samply.</p>
+                                    <h5>Bem vindo!</h5>
+                                    <p class="text-muted">Faça seu login para continuar na Fale Flex.</p>
                                 </div>
 
                                 <div class="mt-4 pt-3">
@@ -24,19 +24,19 @@
                                         <div class="mb-3">
                                             <label for="email" class="fw-semibold">Email</label>
                                             <input type="text" formControlName="email" class="form-control" id="email"
-                                                placeholder="Enter email"
+                                                placeholder="Informe seu email"
                                                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                                             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                                <div *ngIf="f.email.errors.required">Email is required</div>
-                                                <div *ngIf="f.email.errors.email">Email must be a valid email address
+                                                <div *ngIf="f.email.errors.required">Email é obrigatório</div>
+                                                <div *ngIf="f.email.errors.email">O Email deve ser um endereço de Email válido
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 mb-4">
-                                            <label for="userpassword" class="fw-semibold">Password</label>
+                                            <label for="userpassword" class="fw-semibold">Senha</label>
                                             <input type="password" formControlName="password" class="form-control"
-                                                id="userpassword" placeholder="Enter password"
+                                                id="userpassword" placeholder="Informe sua senha"
                                                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                                             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                                                 <div *ngIf="f.email.errors.required">Password is required</div>
@@ -49,14 +49,14 @@
                                             <div class="col-12">
                                                 <div class="text-end">
                                                     <button class="btn btn-primary w-md waves-effect waves-light"
-                                                        type="submit">Log In</button>
+                                                        type="submit">Entrar</button>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="mt-4">
                                             <a routerLink="/account/recoverpwd" class="text-muted"><i
-                                                    class="mdi mdi-lock me-1"></i> Forgot your password?</a>
+                                                    class="mdi mdi-lock me-1"></i> Esqueceu sua senha?</a>
                                         </div>
                                     </form>
                                 </div>
@@ -66,7 +66,6 @@
 
                         <div class="col-lg-6">
                             <div class="p-lg-5 p-4 bg-auth h-100 d-none d-lg-block">
-                                <div class="bg-overlay"></div>
                             </div>
                         </div>
 
@@ -74,10 +73,9 @@
                 </div>
                 <!-- end card -->
                 <div class="mt-5 text-center">
-                    <p>Don't have an account ? <a routerLink="/account/register"
-                            class="fw-semibold text-decoration-underline text-primary"> Sign up </a> </p>
-                    <p>© {{year}} <b>Samply</b>. Crafted with <i class="mdi mdi-heart text-danger"></i> by Pichforest
-                    </p>
+                    <p>Não tem uma conta na Fale Flex? <a routerLink="/account/register"
+                            class="fw-semibold text-decoration-underline text-primary"> Cadastra-se </a> </p>
+                    <p>© {{year}} <b>Fale Flex</b>. 
                 </div>
             </div>
             <!-- end col -->

@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoverpwdComponent } from './recoverpwd/recoverpwd.component';
-import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { ConfirmmailComponent } from './confirmmail/confirmmail.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
 import { SteptwoverificationComponent } from './steptwoverification/steptwoverification.component';
+import { ChangePasswordComponent } from './changepassword/changepassword.component';
 
 const routes: Routes = [
   {
@@ -23,10 +23,6 @@ const routes: Routes = [
     component: RecoverpwdComponent,
   },
   {
-    path: 'lockscreen',
-    component: LockscreenComponent,
-  },
-  {
     path: 'confirm-mail',
     component: ConfirmmailComponent,
   },
@@ -37,6 +33,10 @@ const routes: Routes = [
   {
     path: 'two-step-verification',
     component: SteptwoverificationComponent,
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent,
   },
 ];
 
