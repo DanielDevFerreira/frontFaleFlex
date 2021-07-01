@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor() { }
+  createUserForm!: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.createUserForm = this.formBuilder.group({
+      nome: ['', Validators.required],
+      cpfcnpj: ['', Validators.required]
+    })
+  }
+
+  get f(){ return this.createUserForm.controls; }
+
+  onSubmit(){
+    this.submitted = true;
   }
 
 }

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthfakeauthenticationService } from 'src/app/core/services/authfake.service';
+import { AuthAuthenticationService } from 'src/app/core/services/auth.service';
 
 import { LAYOUT_MODE } from '../../../layouts/layouts.model';
 
@@ -25,21 +25,21 @@ export class LoginComponent implements OnInit {
   submitted = false;
   error: any | null;
   messageError: string = '';
-  
+
 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private authFackservice: AuthfakeauthenticationService,
+    private authservice: AuthAuthenticationService,
     // init: {
     //   error?: any;
     // }
-  ){}
-  
+  ) { }
+
   ngOnInit(): void {
     this.layout_mode = LAYOUT_MODE
-    if(this.layout_mode === 'dark') {
+    if (this.layout_mode === 'dark') {
       document.body.setAttribute("data-layout-mode", "dark");
     }
     //Validation Set
@@ -52,26 +52,27 @@ export class LoginComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
-   
+
   /**
   * Bootsrap validation form submit method
   */
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
 
-      this.authFackservice.login(this.f.email.value, this.f.password.value)
-        .pipe(first())
-        .subscribe(
-          (data: any) => {
-            this.router.navigate(['']);
-          },
-          (error: any) => {
-            this.error = error ? error : '';
-            this.messageError = error.error.message;
-            }
-          );
+    this.authservice.login(this.f.email.value, this.f.password.value)
+      .pipe(first())
+      .subscribe(
+        (data: any) => {
+          this.router.navigate(['']);
+        },
+        (error: any) => {
+          this.error = error ? error : '';
+          this.messageError = error.error.message;
+          //console.log(this.messageError);
+        }
+      );
 
-        //this.router.navigate(['']);
+    //this.router.navigate(['']);
   }
 
 }

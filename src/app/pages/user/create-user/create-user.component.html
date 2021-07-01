@@ -1,1 +1,189 @@
-<p>create-user works!</p>
+<!-- start page title -->
+<app-pagetitle title="Cadastro de usuário" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+<!-- end page title -->
+
+<div class="container-fluid">
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+            <legend class="col-2 card-title" style="font-size: 1.2rem;">Dados pessoais</legend>
+        </fieldset>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Nome Completo:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="nome" id="nome"
+                                placeholder="Nome completo" formControlName="nome"
+                                [ngClass]="{ 'is-invalid': submitted && f.nome.errors }">
+                                <i *ngIf="!submitted && f.nome.errors" style="color: teal;" class="mdi mdi-account-plus-outline"></i>                             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">CPF/CNPJ:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="cpfcnpj" id="cpfcnpj"
+                             placeholder="cpf/cnpj" formControlName="cpfcnpj"
+                             [ngClass]="{ 'is-invalid': submitted && f.cpfcnpj.errors }">
+                            <i *ngIf="!submitted && f.nome.errors" style="color: teal;" class="mdi mdi-badge-account-horizontal-outline"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Nome Tss:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="nometss" id="nometss"
+                                placeholder="Nome Tss">
+                            <i style="color: teal;" class="mdi mdi-account-tie-voice-outline"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Status do usuário:</label>
+                        <div style="display: flex;">
+                            <select class="form-control form-control-sm">
+                                <option>Seleciona o status</option>
+                                <option>Ativo</option>
+                                <option>Inativo</option>
+                            </select>
+                            <i style="color: white;" class="mdi mdi-account-plus-outline"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Nível do usuário:</label>
+                        <div style="display: flex;">
+                            <select class="form-control form-control-sm">
+                                <option>Seleciona o nível</option>
+                                <option value="1">Administrador</option>
+                                <option value="0">Usuário</option>
+                            </select>
+                            <i style="color: white;" class="mdi mdi-account-plus-outline"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Endereço completo:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="endereco" id="endereco"
+                                placeholder="Endereço completo">
+                            <i style="color: teal;" class="mdi mdi-crosshairs-gps"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Subdomínio:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="subdominio" id="subdominio"
+                                placeholder="Subdomínio">
+                            <i style="color: teal;" class="mdi mdi-lan"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <fieldset>
+                <legend class="col-2 card-title" style="font-size: 1.2rem;">Financeiro</legend>
+            </fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Responsável financeiro:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="responsavel-financeiro" id="responsavel-financeiro"
+                                placeholder="Responsável financeiro">
+                            <i style="color: teal;" class="mdi mdi-account-tie"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Telefone financeiro:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="telefone-financeiro" id="telefone-financeiro"
+                                placeholder="Telefone financeiro">
+                            <i style="color: teal;" class="mdi mdi-cellphone-android"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Email financeiro:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="email-financeiro" id="email-financeiro"
+                                placeholder="Email financeiro">
+                            <i style="color: teal;" class="mdi mdi-email-open-outline"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <fieldset>
+                <legend class="col-2 card-title" style="font-size: 1.2rem;">Técnico</legend>
+            </fieldset>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Responsável técnico:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="responsavel-tecnico" id="responsavel-tecnico"
+                                placeholder="Responsável financeiro">
+                            <i style="color: teal;" class="mdi mdi-account-cog-outline"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Telefone técnico:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="telefone-tecnico" id="telefone-tecnico"
+                                placeholder="Telefone financeiro">
+                            <i style="color: teal;" class="mdi mdi-cellphone-android"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Email técnico:</label>
+                        <div style="display: flex;">
+                            <input class="form-control form-control-sm" type="text" name="email-tecnico" id="email-tecnico"
+                                placeholder="Email financeiro">
+                            <i style="color: teal;" class="mdi mdi-email-open-outline"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <div class="mb-3">
+                        <label class="form-label">Observação:</label>
+                        <div style="display: flex;">
+                            <textarea class="form-control form-control-sm" name="obs" id="obs"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-12 col-xs-12">
+                    <div class="mb-4">
+                        <input class="btn btn-primary btn-md col-12" type="submit" value="Cadastrar">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-12 col-xs-12">
+                    <div class="mb-4">
+                        <input class="btn btn-danger btn-md col-12" type="submit" value="Limpar">
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
